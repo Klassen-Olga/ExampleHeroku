@@ -53,4 +53,9 @@ public class GreetingController {
         return "greetings";
     }
 
+    @GetMapping("/")
+    public String hw() {
+        return "Hello World";
+    }
+
 }
