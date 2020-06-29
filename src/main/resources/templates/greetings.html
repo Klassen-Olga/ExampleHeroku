@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Getting Started: Handling Form Submission</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <h1>Result</h1>
+        <div th:each="greeting: ${greetings}">
+            <p th:text="'id: ' + ${greeting.id}"/>
+            <p th:text="'content: ' + ${greeting.content}"/>
+        </div>
+        ----------------------------------
+        <div name="mainDiv" th:each="greeting: ${greetings}">
+            <div th:if="${greeting.id}==1">
+                <p th:text="'id: ' + ${greeting.id}"/>
+                <p th:text="'content: ' + ${greeting.content}"/>
+            </div>
+            <div th:unless="${greeting.id}==1">
+                <p>No User with id 1</p>
+            </div>
+        </div>
+    </body>
+</html>
